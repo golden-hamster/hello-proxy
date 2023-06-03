@@ -13,7 +13,7 @@ public class DynamicProxyBasicConfig {
 
     @Bean
     public OrderControllerV1 orderControllerV1(LogTrace logTrace) {
-        OrderControllerIV1mpl orderController = new OrderControllerIV1mpl(orderServiceV1(logTrace));
+        OrderControllerV1mpl orderController = new OrderControllerV1mpl(orderServiceV1(logTrace));
         OrderControllerV1 proxy = (OrderControllerV1) Proxy.newProxyInstance(OrderControllerV1.class.getClassLoader(),
                 new Class[]{OrderControllerV1.class},
                 new LogTraceBasicHandler(orderController, logTrace));

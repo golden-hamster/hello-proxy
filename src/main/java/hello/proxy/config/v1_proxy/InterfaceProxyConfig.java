@@ -13,7 +13,7 @@ public class InterfaceProxyConfig {
 
     @Bean
     public OrderControllerV1 orderController(LogTrace logTrace) {
-        OrderControllerIV1mpl controllerImpl = new OrderControllerIV1mpl(orderService(logTrace));
+        OrderControllerV1mpl controllerImpl = new OrderControllerV1mpl(orderService(logTrace));
         return new OrderControllerInterfaceProxy(controllerImpl, logTrace);
     }
 
